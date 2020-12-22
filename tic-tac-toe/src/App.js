@@ -70,12 +70,13 @@ function App() {
   }
 
   var resultElement = "";
-  if (state.gameOver) {
-    resultElement = <h1 className={classes.result}>Player {state.winner} is the winner!!!</h1>
-  }
   if (state.cellsFilled === 9) {
     resultElement = <h1 className={classes.result}>Game drawn!!!</h1>
   }
+  if (state.gameOver) {
+    resultElement = <h1 className={classes.result}>Player {state.winner} is the winner!!!</h1>
+  }
+  
   return (
     <div className={classes.game}>
       <div className={classes.squareContainer}>
