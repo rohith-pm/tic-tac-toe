@@ -1,5 +1,8 @@
 import classes from './App.module.css';
 import { useState } from 'react';
+import Square from './Components/Square/Square';
+import Reset from './Components/Reset/Reset';
+import Result from './Components/Result/Result';
 
 function App() {
 
@@ -36,7 +39,7 @@ function App() {
           newCurrPlayer = "X";
       }
       const result = findResult(newArr);
-      if (result !== undefined) {
+      if (result != null) {
         winnerName = result;
         gameDone = true;
       }
@@ -69,54 +72,28 @@ function App() {
     }
   }
 
-  var resultElement = "";
-  if (state.cellsFilled === 9) {
-    resultElement = <h1 className={classes.result}>Game drawn!!!</h1>
-  }
-  if (state.gameOver) {
-    resultElement = <h1 className={classes.result}>Player {state.winner} is the winner!!!</h1>
-  }
-  
   return (
     <div className={classes.game}>
-      <div className={classes.squareContainer}>
-        <div className={classes.square} onClick={() => handleClick(0)}>
-          <div className={classes.letter}>{state.arr[0]}</div>
-        </div>
-        <div className={classes.square} onClick={() => handleClick(1)}>
-          <div className={classes.letter}>{state.arr[1]}</div>
-        </div>
-        <div className={classes.square} onClick={() => handleClick(2)}>
-          <div className={classes.letter}>{state.arr[2]}</div>
-        </div>
+      <div className={classes.row}>
+        <Square clicked={handleClick} ind="0" lttr={state.arr[0]} />
+        <Square clicked={handleClick} ind="1" lttr={state.arr[1]} />
+        <Square clicked={handleClick} ind="2" lttr={state.arr[2]} />
       </div>
-      <div className={classes.squareContainer}>
-        <div className={classes.square} onClick={() => handleClick(3)}>
-          <div className={classes.letter}>{state.arr[3]}</div>
-        </div>
-        <div className={classes.square} onClick={() => handleClick(4)}>
-          <div className={classes.letter}>{state.arr[4]}</div>
-        </div>
-        <div className={classes.square} onClick={() => handleClick(5)}>
-          <div className={classes.letter}>{state.arr[5]}</div>
-        </div>
+      <div className={classes.row}>
+        <Square clicked={handleClick} ind="3" lttr={state.arr[3]} />
+        <Square clicked={handleClick} ind="4" lttr={state.arr[4]} />
+        <Square clicked={handleClick} ind="5" lttr={state.arr[5]} />
       </div>
-      <div className={classes.squareContainer}>
-        <div className={classes.square} onClick={() => handleClick(6)}>
-          <div className={classes.letter}>{state.arr[6]}</div>
-        </div>
-        <div className={classes.square} onClick={() => handleClick(7)}>
-          <div className={classes.letter}>{state.arr[7]}</div>
-        </div>
-        <div className={classes.square} onClick={() => handleClick(8)}>
-          <div className={classes.letter}>{state.arr[8]}</div>
-        </div>
+      <div className={classes.row}>
+        <Square clicked={handleClick} ind="6" lttr={state.arr[6]} />
+        <Square clicked={handleClick} ind="7" lttr={state.arr[7]} />
+        <Square clicked={handleClick} ind="8" lttr={state.arr[8]} />
       </div>
-      <div className={classes.squareContainer}>
-        {resultElement}
+      <div className={classes.row}>
+        <Result cellsFilled={state.cellsFilled} gameOver={state.gameOver} winner={state.winner}/>
       </div>
-      <div className={classes.squareContainer}>
-        <button className={classes.btn} onClick={reset}>Reset</button>
+      <div className={classes.row}>
+        <Reset clicked={reset}/>
       </div>
     </div>
   );

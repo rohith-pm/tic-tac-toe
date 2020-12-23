@@ -1,0 +1,8 @@
+.btn {
+    display: inline-flexbox;
+    background-color: orangered;
+    width: 6em;
+    height: 3em;
+    color: whitesmoke;
+    text-align: center;
+  }

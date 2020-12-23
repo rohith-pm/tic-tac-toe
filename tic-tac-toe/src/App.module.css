@@ -1,22 +1,8 @@
-.square {
-  display: inline-flexbox;
-  width: 10em;
-  height: 10em;
-  margin: 3px;
-  background-color:rgb(61, 151, 151);
-  text-align: center;
-}
-
-.squareContainer {
+.row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
-}
-
-.letter {
-  font-size: 8em;
-  color: white;
 }
 
 .game {
@@ -25,20 +11,3 @@
   margin-top: 20px;
 }
 
-.result {
-  color: tomato;
-  font-size: x-large;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-}
-
-.btn {
-  display: inline-flexbox;
-  background-color: orangered;
-  width: 6em;
-  height: 3em;
-  color: whitesmoke;
-  text-align: center;
-}
