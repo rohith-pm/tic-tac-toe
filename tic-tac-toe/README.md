@@ -1,1 +1,1 @@
-Tic Tac Toe Game useing React Hooks
+Tic Tac Toe Game using React Hooks
