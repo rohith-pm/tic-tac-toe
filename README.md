@@ -1,6 +1,6 @@
 Tic Tac Toe Game using React JS
 
-Steps to run frontend:
+Steps to run application:
 
 1)npm install
 
